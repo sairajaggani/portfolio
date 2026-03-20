@@ -5,10 +5,8 @@ import Tilt from "react-parallax-tilt";
 import homeLogo from "../../Assets/work.jpg";
 import Type from "./Type";
 
-
 import {
   AiFillGithub,
-
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -37,14 +35,12 @@ function Home2() {
           </Col>
 
           <Col md={5} style={{ paddingBottom: 20 }}>
-            
-             <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
-
+            <img
+              src={homeLogo}
+              alt="home pic"
+              className="img-fluid"
+              style={{ maxHeight: "450px", borderRadius: "12px" }}
+            />
           </Col>
         </Row>
       </Container>
@@ -57,7 +53,7 @@ function Home2() {
             </h1>
             <p className="home-about-body">
               I fell in love with programming, and ever since, I have been
-              exploring the world of tech—one bug at a time. 😄
+              exploring the world of tech — one bug at a time.
               <br />
               <br />I am fluent in languages like
               <i>
@@ -68,7 +64,7 @@ function Home2() {
               <br />
               My interests lie in creating modern
               <i>
-                <b className="purple">Web products, Cloud-based solutions </b>{" "}
+                <b className="purple"> Web products, Cloud-based solutions </b>
                 and occasionally diving into{" "}
                 <b className="purple">mobile and data-driven projects.</b>
               </i>
@@ -84,7 +80,12 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="Profile" />
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="Profile"
+                style={{ borderRadius: "12px" }}
+              />
             </Tilt>
           </Col>
         </Row>
@@ -100,7 +101,7 @@ function Home2() {
                   href="https://github.com/sairajaggani"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -111,7 +112,7 @@ function Home2() {
                   href="https://www.linkedin.com/in/sai-raj-a4817a2a1"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>

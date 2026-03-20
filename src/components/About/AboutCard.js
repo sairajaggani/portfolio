@@ -7,9 +7,7 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-           
-      
+          <p style={{ textAlign: "justify", color: "var(--text-secondary)" }}>
             I am currently employed as a software developer at Reality AI.
             <br />
             I have completed my Master's in Computer Science.
@@ -32,10 +30,10 @@ function AboutCard() {
             </li>
           </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Driven to create solutions that matter and experiences that last!"{" "}
+          <p style={{ color: "var(--text-muted)" }}>
+            "Driven to create solutions that matter and experiences that last!"
           </p>
-          <footer className="blockquote-footer, purple">-Sai Raj Aggani</footer>
+          <footer className="blockquote-footer purple">-Sai Raj Aggani</footer>
         </blockquote>
       </Card.Body>
     </Card>
