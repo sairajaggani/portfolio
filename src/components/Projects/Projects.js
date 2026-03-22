@@ -11,7 +11,7 @@ import netbank from "../../Assets/Projects/netbank.png";
 import customer from "../../Assets/Projects/Customer.jpg";
 import work from "../../Assets/work.jpg";
 import about from "../../Assets/about.png";
-import home from "../../Assets/home.png";
+import home from "../../Assets/work.jpg";
 import profile from "../../Assets/profile.jpg";
 
 function Projects() {

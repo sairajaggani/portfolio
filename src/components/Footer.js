@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
   AiFillInstagram,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
@@ -15,7 +16,7 @@ function Footer({ theme }) {
       fluid
       className="footer"
       style={{
-        backgroundColor: isDark ? "#0b1120" : "#e2e8f0",
+        backgroundColor: isDark ? "#29334c" : "#ffffff",
         color: isDark ? "#94a3b8" : "#475569",
       }}
     >
@@ -54,6 +55,14 @@ function Footer({ theme }) {
                 rel="noopener noreferrer"
               >
                 <AiFillInstagram />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="mailto:sairaj.yad22@gmail.com"
+                title="Send Email"
+              >
+                <AiOutlineMail />
               </a>
             </li>
           </ul>

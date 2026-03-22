@@ -45,6 +45,7 @@ import {
   SiFlask,
   SiBootstrap,
   SiExpress,
+  SiAndroidstudio,
 } from "react-icons/si";
 
 // ── 1. Languages
@@ -54,13 +55,15 @@ const languageSkills = [
   { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
   { icon: <DiPython />, name: "Python", color: "#306998" },
   { icon: <SiCplusplus />, name: "C++", color: "#00599C" },
-  { icon: <SiHtml5 />, name: "HTML5", color: "#e34c26" },
-  { icon: <SiCss3 />, name: "CSS3", color: "#264de4" },
+
+
 ];
 
 // ── 2. Frontend
 const frontendSkills = [
   { icon: <DiReact />, name: "React", color: "#61DBFB" },
+    { icon: <SiHtml5 />, name: "HTML5", color: "#e34c26" },
+  { icon: <SiCss3 />, name: "CSS3", color: "#264de4" },
   { icon: <SiNextdotjs />, name: "Next.js", color: "var(--text-primary)" },
   { icon: <SiRedux />, name: "Redux", color: "#764ABC" },
   { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "#38B2AC" },
@@ -81,6 +84,8 @@ const mobileSkills = [
   { icon: <TbBrandReactNative />, name: "React Native", color: "#61DBFB" },
   { icon: <AiFillAndroid />, name: "Android", color: "#A4C639" },
   { icon: <SiFirebase />, name: "Firebase", color: "#FFCA28" },
+  { icon: <SiAndroidstudio />, name: "Android Studio", color: "#3DDC84" },
+
 ];
 
 // ── 5. Databases

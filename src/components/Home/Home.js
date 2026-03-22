@@ -5,6 +5,7 @@ import About from "../About/About";
 import Projects from "../Projects/Projects";
 import GitHub from "../GitHub/GitHub";
 import Resume from "../Resume/ResumeNew";
+import Contact from "../Contact/Contact";
 
 function Home({ theme }) {
   return (
@@ -26,6 +27,10 @@ function Home({ theme }) {
 
       <section id="resume">
         <Resume />
+      </section>
+
+      <section id="contact">
+        <Contact />
       </section>
     </section>
   );

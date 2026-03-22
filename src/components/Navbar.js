@@ -9,6 +9,7 @@ import {
   AiOutlineLaptop,
   AiFillLinkedin,
   AiFillGithub,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { MdWork, MdLightMode, MdDarkMode } from "react-icons/md";
 import { CgFileDocument } from "react-icons/cg";
@@ -115,6 +116,19 @@ function NavBar({ theme, toggleTheme }) {
                 }}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  updateExpanded(false);
+                }}
+              >
+                <AiOutlineMail style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
 
