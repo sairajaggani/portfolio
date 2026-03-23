@@ -21,7 +21,7 @@ import {
   SiDocker,
   SiAmazonaws,
   SiTailwindcss,
-  SiRedux,
+  //SiRedux,
   SiVisualstudiocode,
   SiGithub,
   SiHtml5,
@@ -31,14 +31,14 @@ import {
   SiCplusplus,
   SiTypescript,
   SiDjango,
-  SiMicrosoftazure,
+  // SiMicrosoftazure,
   SiGooglecloud,
-  SiTerraform,
-  SiKubernetes,
-  SiJira,
-  SiSelenium,
+  // SiTerraform,
+  // SiKubernetes,
+  // SiJira,
+  // SiSelenium,
   SiApachemaven,
-  SiGradle,
+  //SiGradle,
   SiAmazondynamodb,
   SiGithubactions,
   SiNextdotjs,
@@ -65,7 +65,6 @@ const frontendSkills = [
     { icon: <SiHtml5 />, name: "HTML5", color: "#e34c26" },
   { icon: <SiCss3 />, name: "CSS3", color: "#264de4" },
   { icon: <SiNextdotjs />, name: "Next.js", color: "var(--text-primary)" },
-  { icon: <SiRedux />, name: "Redux", color: "#764ABC" },
   { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "#38B2AC" },
   { icon: <SiBootstrap />, name: "Bootstrap", color: "#7952B3" },
 ];
@@ -101,10 +100,7 @@ const databaseSkills = [
 const devopsSkills = [
   { icon: <SiAmazonaws />, name: "AWS", color: "#FF9900" },
   { icon: <SiGooglecloud />, name: "GCP", color: "#4285F4" },
-  { icon: <SiMicrosoftazure />, name: "Azure", color: "#0089D6" },
   { icon: <SiDocker />, name: "Docker", color: "#2496ED" },
-  { icon: <SiKubernetes />, name: "Kubernetes", color: "#326CE5" },
-  { icon: <SiTerraform />, name: "Terraform", color: "#623CE4" },
   { icon: <SiGithubactions />, name: "GitHub Actions", color: "#2088FF" },
   { icon: <DiJenkins />, name: "Jenkins", color: "#D24939" },
 ];
@@ -114,12 +110,10 @@ const toolsSkills = [
   { icon: <DiGit />, name: "Git", color: "#F1502F" },
   { icon: <SiGithub />, name: "GitHub", color: "var(--text-primary)" },
   { icon: <SiPostman />, name: "Postman", color: "#FF6C37" },
-  { icon: <SiJira />, name: "JIRA", color: "#0052CC" },
-  { icon: <SiSelenium />, name: "Selenium", color: "#43B02A" },
   { icon: <SiApachemaven />, name: "Maven", color: "#C71A36" },
-  { icon: <SiGradle />, name: "Gradle", color: "#02303A" },
   { icon: <SiVisualstudiocode />, name: "VS Code", color: "#007ACC" },
   { icon: <DiLinux />, name: "Linux", color: "var(--text-secondary)" },
+
 ];
 
 const renderSkills = (skills, title) => (

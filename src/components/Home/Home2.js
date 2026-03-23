@@ -2,8 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/profile.jpg";
 import Tilt from "react-parallax-tilt";
-import homeLogo from "../../Assets/work.jpg";
+
 import Type from "./Type";
+import WhatIDo from "./WhatIDo";
 
 import {
   AiFillGithub,
@@ -33,14 +34,15 @@ function Home2() {
               <Type />
             </div>
           </Col>
-
-          <Col md={5} style={{ paddingBottom: 20 }}>
-            <img
-              src={homeLogo}
-              alt="home pic"
-              className="img-fluid"
-              style={{ maxHeight: "450px", borderRadius: "12px" }}
-            />
+      <Col md={5} style={{ paddingBottom: 20 }}>
+            <Tilt>
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="Profile"
+                style={{maxHeight: "450px", borderRadius: "12px" }}
+              />
+            </Tilt>
           </Col>
         </Row>
       </Container>
@@ -65,7 +67,7 @@ function Home2() {
               My interests lie in creating modern
               <i>
                 <b className="purple"> Web products, Cloud-based solutions </b>
-                and occasionally diving into{" "}
+                and also diving into{" "}
                 <b className="purple">mobile and data-driven projects.</b>
               </i>
               <br />
@@ -78,15 +80,10 @@ function Home2() {
               &nbsp; to bring ideas to life.
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img
-                src={myImg}
-                className="img-fluid"
-                alt="Profile"
-                style={{ borderRadius: "12px" }}
-              />
-            </Tilt>
+
+
+          <Col md={4} className="wid-col">
+            <WhatIDo />
           </Col>
         </Row>
         <Row>

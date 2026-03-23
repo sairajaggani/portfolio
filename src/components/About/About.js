@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Experience from "./Experience";
-import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import FeaturedProject from "./FeaturedProject";
+import ZygoPhones from "./ZygoPhones";
 
 
 function About() {
@@ -22,16 +22,27 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              More about <strong className="purple">Me and my Work</strong>
+              Featured <strong className="purple">Project</strong>
             </h1>
-            <Aboutcard />
+            <div className="about-bio-strip">
+              <span className="about-bio-degree">M.S. Computer Science</span>
+              <span className="about-bio-dot">·</span>
+              <span>Full Stack &amp; Mobile Developer</span>
+            </div>
+            <p className="about-bio-interests">
+              Outside of coding —{" "}
+              <span className="purple">learning new tech</span>, playing games, music &amp; travelling.
+            </p>
+            <FeaturedProject />
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            style={{ paddingTop: "20px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+
+            
+            <ZygoPhones />
           </Col>
         </Row>
         <Experience />

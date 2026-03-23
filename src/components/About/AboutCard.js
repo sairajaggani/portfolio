@@ -8,8 +8,6 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify", color: "var(--text-secondary)" }}>
-            I am currently employed as a software developer at Reality AI.
-            <br />
             I have completed my Master's in Computer Science.
             <br />
             <br />
