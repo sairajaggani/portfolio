@@ -37,11 +37,9 @@ function About() {
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "20px", paddingBottom: "50px" }}
+            style={{ paddingTop: "60px", paddingBottom: "50px", marginTop: "200px" }}
             className="about-img"
           >
-
-            
             <ZygoPhones />
           </Col>
         </Row>

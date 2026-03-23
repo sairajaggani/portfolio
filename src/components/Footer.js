@@ -59,7 +59,7 @@ function Footer({ theme }) {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:sairaj.yad22@gmail.com"
+                href="mailto:sairaj.aggani@gmail.com"
                 title="Send Email"
               >
                 <AiOutlineMail />

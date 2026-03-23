@@ -942,81 +942,77 @@ body,
 }
 /* ──────────────────────────────────────── */
 
-/* ===== ZYGO Phone Mockup ===== */
-.zp-outer {
-  position: relative;
+/* ===== ZYGO 3D Phone Carousel ===== */
+
+.zp-wrapper {
+  --zp-radius: 175px;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 30px 0 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0 10px;
   width: 100%;
+  user-select: none;
+  position: relative;
 }
 
-/* Ambient glow bloom behind center phone */
-.zp-outer::before {
+/* Ambient glow behind the ring */
+.zp-wrapper::before {
   content: '';
   position: absolute;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(74,222,128,0.13) 0%, transparent 68%);
-  top: 42%;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(74,222,128,0.10) 0%, transparent 65%);
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
+}
+
+/* Perspective container — sized to one phone */
+.zp-carousel {
+  perspective: 900px;
+  width: 165px;
+  height: 350px;
+  position: relative;
+}
+
+/* Rotating ring */
+.zp-ring {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.4, 0, .2, 1);
 }
 
 /* Phone frame */
 .zp-phone {
-  width: 170px;
-  height: 360px;
-  border-radius: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
   background: #0c1220;
-  border: 3px solid rgba(255,255,255,0.13);
+  border: 3px solid rgba(255,255,255,0.12);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.05),
-    0 24px 64px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.09);
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 20px 48px rgba(0,0,0,0.65);
   overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  z-index: 1;
-}
-
-.zp-left {
-  transform: rotate(-11deg) translateY(24px);
-  margin-right: -38px;
-  z-index: 1;
-}
-
-.zp-center {
-  transform: scale(1.10);
-  z-index: 3;
-  border-color: rgba(74,222,128,0.3);
-  box-shadow:
-    0 0 0 1px rgba(74,222,128,0.12),
-    0 28px 72px rgba(0,0,0,0.75),
-    0 0 48px rgba(74,222,128,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.1);
-}
-
-.zp-right {
-  transform: rotate(11deg) translateY(24px);
-  margin-left: -38px;
-  z-index: 1;
+  backface-visibility: hidden;
 }
 
 /* Notch */
 .zp-notch {
-  width: 42px;
+  width: 40px;
   height: 9px;
   background: #0c1220;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 9px 9px;
   margin: 0 auto;
   flex-shrink: 0;
-  z-index: 2;
 }
 
 /* Real screenshot */
@@ -1035,41 +1031,38 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  background: linear-gradient(160deg, #0a1628 0%, #0f2040 100%);
-  border: 1.5px dashed rgba(74,222,128,0.35);
-  margin: 8px;
-  border-radius: 22px;
+  gap: 14px;
+  background: linear-gradient(160deg, #0a1628, #0f2040);
+  border: 1.5px dashed rgba(74,222,128,0.28);
+  margin: 7px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
 }
 
-/* subtle dot-grid overlay */
 .zp-placeholder::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(74,222,128,0.12) 1px, transparent 1px);
-  background-size: 18px 18px;
+  background-image: radial-gradient(circle, rgba(74,222,128,0.09) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
 }
 
 .zp-ph-icon {
   font-size: 2.6em;
-  color: rgba(74,222,128,0.55);
-  filter: drop-shadow(0 0 10px rgba(74,222,128,0.4));
+  color: rgba(74,222,128,0.45);
+  filter: drop-shadow(0 0 10px rgba(74,222,128,0.3));
   position: relative;
   z-index: 1;
 }
 
 .zp-ph-label {
-  font-size: 0.72em;
+  font-size: 0.75em;
   font-weight: 700;
   color: rgba(74,222,128,0.9);
   text-align: center;
   padding: 0 12px;
-  line-height: 1.35;
   letter-spacing: 0.04em;
   position: relative;
   z-index: 1;
@@ -1077,8 +1070,7 @@ body,
 
 .zp-ph-hint {
   font-size: 0.5em;
-  color: rgba(148,163,184,0.6);
-  text-align: center;
+  color: rgba(148,163,184,0.5);
   font-family: monospace;
   background: rgba(0,0,0,0.35);
   padding: 3px 10px;
@@ -1087,33 +1079,64 @@ body,
   z-index: 1;
 }
 
-/* App-name label below the group */
+/* Active screen label */
+.zp-active-label {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+  min-height: 1.2em;
+  transition: opacity 0.3s;
+}
+
+/* Dot nav */
+.zp-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.zp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(148,163,184,0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.zp-dot:hover { background: rgba(148,163,184,0.5); }
+
+.zp-dot-active {
+  background: var(--imp-text-color);
+  width: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(74,222,128,0.3);
+}
+
+/* Caption */
 .zp-caption {
-  position: absolute;
-  bottom: 4px;
-  left: 0; right: 0;
-  text-align: center;
-  font-size: 0.7em;
+  font-size: 0.65em;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(74,222,128,0.45);
-  z-index: 4;
+  color: rgba(74,222,128,0.3);
 }
 
+/* ── Responsive ── */
 @media (max-width: 991px) {
-  .zp-phone  { width: 140px; height: 295px; border-radius: 28px; }
-  .zp-left   { transform: rotate(-10deg) translateY(18px); margin-right: -30px; }
-  .zp-right  { transform: rotate( 10deg) translateY(18px); margin-left: -30px; }
-  .zp-outer::before { width: 260px; height: 260px; }
+  .zp-wrapper  { --zp-radius: 140px; }
+  .zp-carousel { width: 140px; height: 300px; perspective: 800px; }
+  .zp-phone    { border-radius: 26px; }
 }
 
 @media (max-width: 767px) {
-  .zp-outer  { padding: 16px 0 30px; }
-  .zp-phone  { width: 110px; height: 232px; border-radius: 24px; }
-  .zp-left   { transform: rotate(-9deg) translateY(14px); margin-right: -22px; }
-  .zp-right  { transform: rotate( 9deg) translateY(14px); margin-left: -22px; }
-  .zp-outer::before { display: none; }
+  .zp-wrapper  { --zp-radius: 115px; padding: 10px 0; gap: 12px; }
+  .zp-carousel { width: 120px; height: 255px; perspective: 650px; }
+  .zp-phone    { border-radius: 22px; }
 }
 /* ──────────────────────────────────────── */
 

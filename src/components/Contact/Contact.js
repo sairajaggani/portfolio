@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-const EMAIL = "sairaj.yad22@gmail.com";
+const EMAIL = "sairaj.aggani@gmail.com";
 
 function Contact() {
   return (
