@@ -1,7 +1,7 @@
 import React from "react";
-import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { AiFillAndroid } from "react-icons/ai";
-import { TbBrandReactNative } from "react-icons/tb";
+import { TbBrandReactNative, TbRobot, TbBrain } from "react-icons/tb";
 import {
   DiJavascript1,
   DiReact,
@@ -46,6 +46,8 @@ import {
   SiBootstrap,
   SiExpress,
   SiAndroidstudio,
+  SiOpenai,
+  SiChatbot,
 } from "react-icons/si";
 
 // ── 1. Languages
@@ -105,7 +107,17 @@ const devopsSkills = [
   { icon: <DiJenkins />, name: "Jenkins", color: "#D24939" },
 ];
 
-// ── 7. Tools
+// ── 7. AI & Automation
+const aiSkills = [
+  { icon: <SiOpenai />, name: "OpenAI / GPT", color: "#412991" },
+  { icon: <TbBrain />, name: "Claude Code", color: "#D97757" },
+  { icon: <SiChatbot />, name: "AI Chatbots", color: "#10a37f" },
+  { icon: <TbRobot />, name: "AI Agents", color: "#6366f1" },
+  { icon: <SiChatbot />, name: "N8N Automation", color: "#ea4b71" },
+
+];
+
+// ── 8. Tools
 const toolsSkills = [
   { icon: <DiGit />, name: "Git", color: "#F1502F" },
   { icon: <SiGithub />, name: "GitHub", color: "var(--text-primary)" },
@@ -122,14 +134,14 @@ const renderSkills = (skills, title) => (
     <Row className="tech-stack-row">
       {skills.map((skill, idx) => (
         <Col xs="auto" className="tech-icon-col" key={idx}>
-          <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip id={`tooltip-${title}-${idx}`}>{skill.name}</Tooltip>}
+          <div
+            className="tech-icon-wrapper"
+            style={{ color: skill.color }}
+            data-tooltip={skill.name}
+            aria-label={skill.name}
           >
-            <div className="tech-icon-wrapper" style={{ color: skill.color }}>
-              {skill.icon}
-            </div>
-          </OverlayTrigger>
+            {skill.icon}
+          </div>
         </Col>
       ))}
     </Row>
@@ -145,6 +157,7 @@ function Techstack() {
       {renderSkills(mobileSkills, "Mobile")}
       {renderSkills(databaseSkills, "Databases")}
       {renderSkills(devopsSkills, "Cloud & DevOps")}
+      {renderSkills(aiSkills, "AI & Automation")}
       {renderSkills(toolsSkills, "Tools")}
     </div>
   );

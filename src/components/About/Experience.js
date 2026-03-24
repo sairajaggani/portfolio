@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -33,31 +33,58 @@ const experiences = [
     date: "Apr 2022 – Aug 2023",
     location: "Hyderabad, India",
     description: [
-      "Built an Android tool (Java, Android Studio) for bulk generation, scanning, and validation of 10,000+ QR codes for physical key assets — connected to internal database, deployed across multiple teams, fully replacing a manual process.",
+      "Built an Android tool (Java, Android Studio) for bulk generation, scanning, and validation of 10,000+ QR codes for physical key assets — fully replacing a manual process.",
       "Developed a Learning Analytics Dashboard with React.js and Spring Boot; hybrid data model using PostgreSQL for relational data and MongoDB for unstructured user logs.",
-      "Implemented scheduled background jobs for user progress tracking, data visualization graphs, and REST APIs for quiz management, scoring, and feedback.",
+      "Built internal tools that improved operational efficiency across multiple teams with scheduled background jobs, data visualization, and REST APIs.",
       "Deployed via Docker Compose + Jenkins CI/CD on AWS EC2.",
     ],
     tech: ["Java", "Android", "Spring Boot", "React", "PostgreSQL", "MongoDB", "Docker", "Jenkins", "AWS"],
   },
 ];
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.18 },
+  },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 36, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
 const ExperienceSection = () => {
   return (
-    <section >
+    <section>
       <h1 className="project-heading">
         Professional <strong className="purple"> Experience</strong>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+      <motion.div
+        className="experience-grid"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.08 }}
+        variants={container}
+      >
         {experiences.map((exp, index) => (
-          <div className="experience-card" key={index}>
+          <motion.div className="experience-card" key={index} variants={cardVariant}>
             <h3 className="experience-role">{exp.title}</h3>
             <p className="experience-company">
               {exp.company}{" — "}
               <span className="experience-date">{exp.date}</span>
             </p>
-            <p className="experience-description">{exp.description}</p>
+            <ul className="experience-bullets">
+              {exp.description.map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
+            </ul>
             <div>
               {exp.tech.map((tech, i) => (
                 <span className="tech-badge" key={i}>
@@ -65,9 +92,9 @@ const ExperienceSection = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

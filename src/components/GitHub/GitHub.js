@@ -1,10 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import GitHubCalendar from "react-github-calendar";
+import { PERSONAL } from "../../config/constants";
 
-function GitHub() {
-
-
+function GitHub({ theme }) {
   return (
     <Container fluid className="github-section">
       <Container>
@@ -16,11 +15,10 @@ function GitHub() {
         </p>
         <Row style={{ justifyContent: "center" }}>
           <Col md={9}>
-            <div className="github-chart-wrapper github-chart-wrapper--fixed">
+            <div className="github-chart-wrapper">
               <GitHubCalendar
-                username="sairajaggani"
-                colorScheme="dark"
-               
+                username={PERSONAL.github}
+                colorScheme={theme === "light" ? "light" : "dark"}
                 blockSize={13}
                 blockMargin={4}
                 fontSize={14}

@@ -1,16 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Experience from "./Experience";
 import FeaturedProject from "./FeaturedProject";
 import ZygoPhones from "./ZygoPhones";
-
+import ScrollReveal from "../ScrollReveal";
 
 function About() {
   return (
     <Container fluid className="about-section" id="about">
-      <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
@@ -43,16 +41,18 @@ function About() {
             <ZygoPhones />
           </Col>
         </Row>
-        <Experience />
 
-        <br />
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
-        
-        <Techstack />
+        <ScrollReveal>
+          <Experience />
+        </ScrollReveal>
 
-        
+        <ScrollReveal>
+          <br />
+          <h1 className="project-heading">
+            Professional <strong className="purple">Skillset </strong>
+          </h1>
+          <Techstack />
+        </ScrollReveal>
       </Container>
     </Container>
   );

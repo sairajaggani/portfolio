@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaCarSide, FaLeaf, FaLock, FaShieldAlt, FaStar, FaCheckCircle,
+  FaCarSide, FaLeaf, FaShieldAlt, FaStar, FaCheckCircle,
 } from "react-icons/fa";
 import {
   TbHexagon, TbMapPin, TbBell, TbKey,
@@ -19,17 +19,16 @@ const userFeatures = [
   { icon: <FaStar />,            text: "Two-way ride rating system" },
   { icon: <FaCheckCircle />,     text: "Approve or cancel incoming ride requests" },
   { icon: <FaShieldAlt />,       text: "Conflict-free seat booking logic" },
-  { icon: <FaShieldAlt />, text: "End-to-end encryption for user data" },
+  { icon: <FaShieldAlt />,       text: "End-to-end encryption for user data" },
 ];
 
 const techFeatures = [
   { icon: <TbHexagon />,   text: "Uber H3 hex grid proximity geo-search" },
   { icon: <TbMapPin />,    text: "Live tracking via Firebase Realtime DB" },
   { icon: <TbBell />,      text: "FCM push notifications" },
-  { icon: <TbKey />,       text: "E mail verification + Google OAuth2" },
+  { icon: <TbKey />,       text: "Email verification + Google OAuth2" },
   { icon: <MdSpeed />,     text: "Rate limiting & abuse prevention" },
   { icon: <MdVerified />,  text: "ID verification flow" },
-
   { icon: <TbKey />,       text: "Testing and Deployment" },
 ];
 
@@ -52,8 +51,6 @@ const techPills = [
 function FeaturedProject() {
   return (
     <div className="featured-project-card">
-
-      {/* ── Header ── */}
       <div className="fp-header">
         <div className="fp-title-row">
           <div className="fp-name-group">
@@ -69,14 +66,12 @@ function FeaturedProject() {
         </p>
       </div>
 
-      {/* ── Highlights ── */}
       <div className="fp-highlights">
         {["iOS & Android", "100% Serverless", "Real-time Tracking", "Next.js Admin Portal"].map((h) => (
           <span className="fp-highlight" key={h}>{h}</span>
         ))}
       </div>
 
-      {/* ── Feature Grid ── */}
       <div className="fp-grid">
         <div className="fp-grid-col">
           <p className="fp-col-title">User Features</p>
@@ -98,7 +93,6 @@ function FeaturedProject() {
         </div>
       </div>
 
-      {/* ── Admin Portal ── */}
       <div className="fp-admin-section">
         <p className="fp-col-title">
           <MdAdminPanelSettings style={{ marginRight: 6 }} />
@@ -114,7 +108,6 @@ function FeaturedProject() {
         </div>
       </div>
 
-      {/* ── Footer ── */}
       <div className="fp-footer">
         <div className="fp-pills">
           {techPills.map((p) => (
@@ -123,11 +116,7 @@ function FeaturedProject() {
             </span>
           ))}
         </div>
-        {/* <span className="fp-private">
-          <FaLock style={{ marginRight: 5 }} /> Private Repo
-        </span> */}
       </div>
-
     </div>
   );
 }

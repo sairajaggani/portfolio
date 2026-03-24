@@ -12,7 +12,7 @@ import customer from "../../Assets/Projects/Customer.jpg";
 import work from "../../Assets/work.jpg";
 import about from "../../Assets/about.png";
 import home from "../../Assets/work.jpg";
-import profile from "../../Assets/profile.jpg";
+import profile from "../../Assets/profile.png";
 
 function Projects() {
   return (

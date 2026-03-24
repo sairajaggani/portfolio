@@ -1,89 +1,31 @@
-import React from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { motion } from "framer-motion";
 
-const ParticleBackground = ({ theme }) => {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
+const orbs = [
+  { x: [-20, 25, -20], y: [-30, 18, -30], duration: 16, delay: 0 },
+  { x: [15, -28, 15], y: [22, -20, 22], duration: 21, delay: 3 },
+  { x: [-12, 18, -12], y: [28, -12, 28], duration: 25, delay: 7 },
+  { x: [22, -14, 22], y: [-22, 28, -22], duration: 29, delay: 2 },
+];
 
-  const isDark = theme !== "light";
-
+const AnimatedBackground = () => {
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
-        fullScreen: { enable: true, zIndex: -1 },
-        background: {
-          color: { value: isDark ? "#000000" : "#8197ad" },
-        },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "grab",
-            },
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 140,
-              links: { opacity: 2},
-            },
-            push: {
-              quantity: 2,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: isDark
-              ? ["#4ade80", "#94a3b8"]
-              : ["#16a34a", "#64748b"],
-          },
-          links: {
-            color: isDark ? "#4ade80" : "#16a34a",
-            distance: 150,
-            enable: true,
-            opacity: isDark ? 0.07 : 0.06,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 0.5,
-            direction: "none",
-            random: true,
-            straight: false,
-            outModes: {
-              default: "out",
-            },
-          },
-          number: {
-            value: 50,
-            density: { enable: true, area: 900 },
-          },
-          opacity: {
-            value: { min: 0.2, max: 0.55 },
-            animation: {
-              enable: true,
-              speed: 0.8,
-              minimumValue: 0.2,
-              sync: false,
-            },
-          },
-          shape: { type: "circle" },
-          size: { value: { min: 1, max: 4 } },
-        },
-        detectRetina: true,
-      }}
-    />
+    <div className="animated-bg" aria-hidden="true">
+      {orbs.map((orb, i) => (
+        <motion.div
+          key={i}
+          className={`bg-orb bg-orb-${i + 1}`}
+          animate={{ x: orb.x, y: orb.y }}
+          transition={{
+            duration: orb.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "mirror",
+            delay: orb.delay,
+          }}
+        />
+      ))}
+    </div>
   );
 };
 
-export default ParticleBackground;
+export default AnimatedBackground;

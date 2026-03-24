@@ -6,11 +6,12 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { SOCIAL_LINKS } from "../config/constants";
 
 function Footer({ theme }) {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
   const isDark = theme !== "light";
+
   return (
     <Container
       fluid
@@ -22,7 +23,7 @@ function Footer({ theme }) {
     >
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Developed by sairajaggani</h3>
+          <h3>Designed & Built by Sai Raj Aggani</h3>
         </Col>
         <Col md="4" className="footer-copywright">
           <h3>Copyright &copy; {year} SR</h3>
@@ -31,36 +32,38 @@ function Footer({ theme }) {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/sairajaggani"
+                href={SOCIAL_LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <AiFillGithub />
               </a>
             </li>
-
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/sai-raj-a4817a2a1"
+                href={SOCIAL_LINKS.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
               </a>
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/sairaj_aggani/"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <AiFillInstagram />
               </a>
             </li>
             <li className="social-icons">
               <a
-                href="mailto:sairaj.aggani@gmail.com"
-                title="Send Email"
+                href={SOCIAL_LINKS.email}
+                aria-label="Send Email"
               >
                 <AiOutlineMail />
               </a>
