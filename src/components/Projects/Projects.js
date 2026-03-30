@@ -11,7 +11,7 @@ import makelab from "../../Assets/Projects/makelab.png";
 import customer from "../../Assets/Projects/Customer.jpg";
 import autojobs from "../../Assets/Projects/jobsauto.png";
 import ollama from "../../Assets/Projects/ollama.png";
-import profile from "../../Assets/profile.png";
+
 
 function Projects() {
   return (

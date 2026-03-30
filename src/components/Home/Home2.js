@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import myImg from "../../Assets/profile.png";
+import myImg from "../../Assets/profile.jpg";
 import Tilt from "react-parallax-tilt";
 import Type from "./Type";
 import WhatIDo from "./WhatIDo";

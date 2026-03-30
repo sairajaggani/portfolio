@@ -6,18 +6,18 @@ import { FaMobileAlt } from "react-icons/fa";
 // 2. Uncomment the matching import below
 // 3. Replace the matching `null` with the imported variable
 // ─────────────────────────────────────────────────────────────────────────────
-// import screen1 from "../../Assets/zygo-screen1.png";
-// import screen2 from "../../Assets/zygo-screen2.png";
-// import screen3 from "../../Assets/zygo-screen3.png";
-// import screen4 from "../../Assets/zygo-screen4.png";
-// import screen5 from "../../Assets/zygo-screen5.png";
+import screen1 from "../../Assets/zygo-screen1.png";
+import screen2 from "../../Assets/zygo-screen2.png";
+import screen3 from "../../Assets/zygo-screen3.png";
+import screen4 from "../../Assets/zygo-screen4.png";
+import screen5 from "../../Assets/zygo-screen5.png";
 
 const screens = [
-  { src: null, label: "Home / Map",    hint: "zygo-screen1.png" },
-  { src: null, label: "Ride Listings", hint: "zygo-screen2.png" },
-  { src: null, label: "Book a Ride",   hint: "zygo-screen3.png" },
-  { src: null, label: "Live Tracking", hint: "zygo-screen4.png" },
-  { src: null, label: "In-app Chat",   hint: "zygo-screen5.png" },
+  { src: screen1, label: "Home / Map",    hint: "zygo-screen1.png" },
+  { src: screen2, label: "Ride Listings", hint: "zygo-screen2.png" },
+  { src: screen3, label: "Book a Ride",   hint: "zygo-screen3.png" },
+  { src: screen4, label: "Live Tracking", hint: "zygo-screen4.png" },
+  { src: screen5, label: "In-app Chat",   hint: "zygo-screen5.png" },
 ];
 
 const N     = screens.length;

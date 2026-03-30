@@ -1012,7 +1012,7 @@ body,
 /* ===== ZYGO 3D Phone Carousel ===== */
 
 .zp-wrapper {
-  --zp-radius: 175px;
+  --zp-radius: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1027,8 +1027,8 @@ body,
 .zp-wrapper::before {
   content: '';
   position: absolute;
-  width: 340px;
-  height: 340px;
+  width: 480px;
+  height: 480px;
   background: radial-gradient(circle, rgba(74,222,128,0.10) 0%, transparent 65%);
   top: 38%;
   left: 50%;
@@ -1038,9 +1038,9 @@ body,
 
 /* Perspective container — sized to one phone */
 .zp-carousel {
-  perspective: 900px;
-  width: 165px;
-  height: 350px;
+  perspective: 1200px;
+  width: 210px;
+  height: 455px;
   position: relative;
 }
 
@@ -1062,38 +1062,42 @@ body,
   height: 100%;
   border-radius: 30px;
   background: #0c1220;
-  border: 3px solid rgba(255,255,255,0.12);
+  border: 3px solid rgba(255,255,255,0.18);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.04),
-    0 20px 48px rgba(0,0,0,0.65);
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 24px 56px rgba(0,0,0,0.7);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   backface-visibility: hidden;
 }
 
-/* Notch */
+/* Notch — overlaid on top of image */
 .zp-notch {
-  width: 40px;
-  height: 9px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 10px;
   background: #0c1220;
-  border-radius: 0 0 9px 9px;
-  margin: 0 auto;
-  flex-shrink: 0;
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
 }
 
-/* Real screenshot */
+/* Real screenshot — fills entire phone frame */
 .zp-screenshot {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  flex: 1;
+  height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   display: block;
 }
 
 /* Placeholder */
 .zp-placeholder {
-  flex: 1;
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1103,7 +1107,6 @@ body,
   border: 1.5px dashed rgba(74,222,128,0.28);
   margin: 7px;
   border-radius: 20px;
-  position: relative;
   overflow: hidden;
 }
 
@@ -1195,14 +1198,14 @@ body,
 
 /* ── Responsive ── */
 @media (max-width: 991px) {
-  .zp-wrapper  { --zp-radius: 140px; }
-  .zp-carousel { width: 140px; height: 300px; perspective: 800px; }
+  .zp-wrapper  { --zp-radius: 185px; }
+  .zp-carousel { width: 170px; height: 368px; perspective: 1000px; }
   .zp-phone    { border-radius: 26px; }
 }
 
 @media (max-width: 767px) {
-  .zp-wrapper  { --zp-radius: 115px; padding: 10px 0; gap: 12px; }
-  .zp-carousel { width: 120px; height: 255px; perspective: 650px; }
+  .zp-wrapper  { --zp-radius: 145px; padding: 10px 0; gap: 12px; }
+  .zp-carousel { width: 140px; height: 303px; perspective: 800px; }
   .zp-phone    { border-radius: 22px; }
 }
 /* ──────────────────────────────────────── */
@@ -2114,6 +2117,12 @@ body,
   border-color: var(--accent);
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+.resume-iframe-wrapper {
+  box-shadow: 0 4px 24px var(--shadow);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* ===== Light Theme Card Depth ===== */
