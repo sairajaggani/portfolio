@@ -33,10 +33,10 @@ function ProjectCards(props) {
             target="_blank"
             rel="noopener noreferrer"
             style={{ marginLeft: "10px" }}
-            aria-label={`View ${props.title} demo`}
+            aria-label={`View ${props.title} Live`}
           >
             <CgWebsite /> &nbsp;
-            Demo
+            Live
           </Button>
         )}
       </Card.Body>
