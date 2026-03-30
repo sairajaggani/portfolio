@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaCarSide, FaLeaf, FaShieldAlt, FaStar, FaCheckCircle,
 } from "react-icons/fa";
