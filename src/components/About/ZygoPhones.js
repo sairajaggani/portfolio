@@ -5,6 +5,7 @@ import { FaMobileAlt } from "react-icons/fa";
 // 1. Add image files to src/Assets/  (e.g. zygo-screen1.png)
 // 2. Uncomment the matching import below
 // 3. Replace the matching `null` with the imported variable
+// 4. Add a label and hint for each screen in the `screens` array
 // ─────────────────────────────────────────────────────────────────────────────
 import screen1 from "../../Assets/zygo-screen1.png";
 import screen2 from "../../Assets/zygo-screen2.png";
