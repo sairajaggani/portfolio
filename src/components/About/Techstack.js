@@ -1,131 +1,121 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { AiFillAndroid } from "react-icons/ai";
-import { TbBrandReactNative, TbRobot, TbBrain } from "react-icons/tb";
+import { FaJava, FaAws ,FaDatabase } from "react-icons/fa";
+import { IoLogoCss3 } from "react-icons/io";
+import { VscVscode } from "react-icons/vsc";
+import { TbBrandReactNative, TbRobot} from "react-icons/tb";
 import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiPython,
-  DiGit,
-  DiJava,
-  DiMongodb,
-  DiJenkins,
-  DiLinux,
-} from "react-icons/di";
-import {
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiCplusplus,
+  SiReact,
+  SiHtml5,
+
+  SiNextdotjs,
+  SiTailwindcss,
+  SiBootstrap,
   SiSpringboot,
+  SiNodedotjs,
+  SiExpress,
+  SiDjango,
+  SiFlask,
+  SiFirebase,
+  SiAndroidstudio,
+  SiAndroid,
+  SiMongodb,
   SiPostgresql,
   SiMysql,
-  SiFirebase,
-  SiDocker,
-  SiAmazonaws,
-  SiTailwindcss,
-  //SiRedux,
-  SiVisualstudiocode,
-  SiGithub,
-  SiHtml5,
-  SiCss3,
+  //SiAmazondynamodb,
   SiSqlite,
-  SiPostman,
-  SiCplusplus,
-  SiTypescript,
-  SiDjango,
-  // SiMicrosoftazure,
+  //SiAmazonaws,
   SiGooglecloud,
-  // SiTerraform,
-  // SiKubernetes,
-  // SiJira,
-  // SiSelenium,
-  SiApachemaven,
-  //SiGradle,
-  SiAmazondynamodb,
+  SiDocker,
   SiGithubactions,
-  SiNextdotjs,
-  SiFlask,
-  SiBootstrap,
-  SiExpress,
-  SiAndroidstudio,
+  SiJenkins,
   SiOpenai,
-  SiChatbot,
+  SiClaude,
+  SiN8N,
+  SiGooglegemini,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiApachemaven,
+  //SiVisualstudiocode,
+  SiLinux,
 } from "react-icons/si";
 
 // ── 1. Languages
 const languageSkills = [
-  { icon: <DiJava />, name: "Java", color: "#f89820" },
-  { icon: <DiJavascript1 />, name: "JavaScript", color: "#f0db4f" },
+  { icon: <FaJava />, name: "Java", color: "#ED8B00" },
+  { icon: <SiJavascript />, name: "JavaScript", color: "#F7DF1E" },
   { icon: <SiTypescript />, name: "TypeScript", color: "#3178C6" },
-  { icon: <DiPython />, name: "Python", color: "#306998" },
+  { icon: <SiPython />, name: "Python", color: "#3776AB" },
   { icon: <SiCplusplus />, name: "C++", color: "#00599C" },
-
-
 ];
 
 // ── 2. Frontend
 const frontendSkills = [
-  { icon: <DiReact />, name: "React", color: "#61DBFB" },
-    { icon: <SiHtml5 />, name: "HTML5", color: "#e34c26" },
-  { icon: <SiCss3 />, name: "CSS3", color: "#264de4" },
+  { icon: <SiReact />, name: "React", color: "#61DAFB" },
+  { icon: <SiHtml5 />, name: "HTML5", color: "#E34F26" },
+  { icon: <IoLogoCss3 />, name: "CSS3", color: "#1572B6" },
   { icon: <SiNextdotjs />, name: "Next.js", color: "var(--text-primary)" },
-  { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "#38B2AC" },
+  { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "#06B6D4" },
   { icon: <SiBootstrap />, name: "Bootstrap", color: "#7952B3" },
 ];
 
 // ── 3. Backend
 const backendSkills = [
   { icon: <SiSpringboot />, name: "Spring Boot", color: "#6DB33F" },
-  { icon: <DiNodejs />, name: "Node.js", color: "#3C873A" },
+  { icon: <SiNodedotjs />, name: "Node.js", color: "#339933" },
   { icon: <SiExpress />, name: "Express.js", color: "var(--text-primary)" },
-  { icon: <SiDjango />, name: "Django", color: "#44b78b" },
+  { icon: <SiDjango />, name: "Django", color: "#00653eff" },
   { icon: <SiFlask />, name: "Flask", color: "var(--text-primary)" },
 ];
 
 // ── 4. Mobile
 const mobileSkills = [
-  { icon: <TbBrandReactNative />, name: "React Native", color: "#61DBFB" },
-  { icon: <AiFillAndroid />, name: "Android", color: "#A4C639" },
+  { icon: <TbBrandReactNative />, name: "React Native", color: "#61DAFB" },
+  { icon: <SiAndroid />, name: "Android", color: "#3DDC84" },
   { icon: <SiFirebase />, name: "Firebase", color: "#FFCA28" },
   { icon: <SiAndroidstudio />, name: "Android Studio", color: "#3DDC84" },
-
 ];
 
 // ── 5. Databases
 const databaseSkills = [
-  { icon: <DiMongodb />, name: "MongoDB", color: "#47A248" },
-  { icon: <SiPostgresql />, name: "PostgreSQL", color: "#336791" },
-  { icon: <SiMysql />, name: "MySQL", color: "#00758F" },
-  { icon: <SiAmazondynamodb />, name: "DynamoDB", color: "#FF9900" },
-  { icon: <SiSqlite />, name: "SQLite", color: "#349ecf" },
+  { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+  { icon: <SiPostgresql />, name: "PostgreSQL", color: "#4169E1" },
+  { icon: <SiMysql />, name: "MySQL", color: "#4479A1" },
+  { icon: <FaDatabase />, name: "DynamoDB", color: "#FF9900" },
+  { icon: <SiSqlite />, name: "SQLite", color: "#08648fff" },
 ];
 
 // ── 6. Cloud & DevOps
 const devopsSkills = [
-  { icon: <SiAmazonaws />, name: "AWS", color: "#FF9900" },
+  { icon: <FaAws />, name: "AWS", color: "#FF9900" },
   { icon: <SiGooglecloud />, name: "GCP", color: "#4285F4" },
   { icon: <SiDocker />, name: "Docker", color: "#2496ED" },
   { icon: <SiGithubactions />, name: "GitHub Actions", color: "#2088FF" },
-  { icon: <DiJenkins />, name: "Jenkins", color: "#D24939" },
+  { icon: <SiJenkins />, name: "Jenkins", color: "#D24939" },
 ];
 
 // ── 7. AI & Automation
 const aiSkills = [
   { icon: <SiOpenai />, name: "OpenAI / GPT", color: "#412991" },
-  { icon: <TbBrain />, name: "Claude Code", color: "#D97757" },
-  { icon: <SiChatbot />, name: "AI Chatbots", color: "#10a37f" },
+  { icon: <SiClaude />, name: "Claude Code", color: "#D97757" },
+  { icon: <SiGooglegemini />, name: "Gemini", color: "#4285F4" },
   { icon: <TbRobot />, name: "AI Agents", color: "#6366f1" },
-  { icon: <SiChatbot />, name: "N8N Automation", color: "#ea4b71" },
-
+  { icon: <SiN8N />, name: "N8N Automation", color: "#FF6C37" },
 ];
 
 // ── 8. Tools
 const toolsSkills = [
-  { icon: <DiGit />, name: "Git", color: "#F1502F" },
+  { icon: <SiGit />, name: "Git", color: "#F05032" },
   { icon: <SiGithub />, name: "GitHub", color: "var(--text-primary)" },
   { icon: <SiPostman />, name: "Postman", color: "#FF6C37" },
   { icon: <SiApachemaven />, name: "Maven", color: "#C71A36" },
-  { icon: <SiVisualstudiocode />, name: "VS Code", color: "#007ACC" },
-  { icon: <DiLinux />, name: "Linux", color: "var(--text-secondary)" },
-
+  { icon: <VscVscode />, name: "VS Code", color: "#007ACC" },
+  { icon: <SiLinux />, name: "Linux", color: "#ccbf08ff" },
 ];
 
 const renderSkills = (skills, title) => (
